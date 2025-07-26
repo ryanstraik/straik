@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partenariat – Straik</title>
+  <link rel="icon" type="image/webp" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .simple-header {
+      background: #FE7305;
+      padding: 0.6rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      min-height: 60px;
+    }
+    .simple-header .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+    .simple-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .simple-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+    .simple-nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .simple-nav a.active {
+      background: rgba(255,255,255,0.3);
+      font-weight: 600;
+    }
+    .back-home {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .back-home:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    @media (max-width: 768px) {
+      .simple-header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .simple-nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+    .partenariat-main {
+      max-width: 600px;
+      margin: 3rem auto 2rem auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .partenariat-intro {
+      font-size: 1.25rem;
+      margin-bottom: 2.2rem;
+      font-weight: 500;
+    }
+    .partenariat-btn {
+      background: #2d7cf5;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 0.8rem 2.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 2.2rem;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+    .partenariat-btn:hover {
+      background: #1a5bb8;
+    }
+    .partenariat-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .partenariat-form label {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .partenariat-form input, .partenariat-form textarea {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+    .partenariat-form textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+    .partenariat-form button[type="submit"] {
+      background: #2d7cf5;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 0.8rem 2.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 0.7rem;
+      transition: background 0.2s;
+    }
+    .partenariat-form button[type="submit"]:hover {
+      background: #1a5bb8;
+    }
+    @media (max-width: 700px) {
+      .partenariat-main { padding: 1.2rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="simple-header">
+    <a href="straik.html" class="logo">Straik</a>
+    <nav class="simple-nav">
+      <a href="straik.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="magazine.html">Actualité</a>
+      <a href="aide.html">Aide & FAQ</a>
+    </nav>
+    <a href="aide.html" class="back-home">Contact</a>
+  </header>
+
+  <main class="partenariat-main">
+    <div class="partenariat-intro">Si vous aussi vous partagez nos valeurs et vous souhaitez devenir partenaire, nous serions ravis d’échanger avec vous</div>
+    <button class="partenariat-btn" onclick="document.getElementById('partenariatForm').scrollIntoView({behavior: 'smooth'})">C’est parti</button>
+    <form class="partenariat-form" id="partenariatForm">
+      <div>
+        <label for="entreprise">Entreprise</label>
+        <input type="text" id="entreprise" name="entreprise" required>
+      </div>
+      <div>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required>
+      </div>
+      <div>
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom">
+      </div>
+      <div>
+        <label for="mail">Mail</label>
+        <input type="email" id="mail" name="mail">
+      </div>
+      <div>
+        <label for="tel">Tel</label>
+        <input type="tel" id="tel" name="tel">
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Donnez un maximum de détail svp"></textarea>
+      </div>
+      <button type="submit">Envoi</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Straik. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>

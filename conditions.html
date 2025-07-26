@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions d'utilisation</title>
+  <link rel="icon" type="image/webp" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: #f7f7f7; }
+    /* Hide the Conditions d'utilisation heading */
+    header h1 { display: none !important; }
+    .toggle-btn {
+      margin: 2rem auto 1.5rem auto;
+      display: block;
+      padding: 0.7rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 2rem;
+      border: 1.5px solid #2d7cf5;
+      background: #fff;
+      color: #2d7cf5;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .toggle-btn.active {
+      background: #2d7cf5;
+      color: #fff;
+    }
+    .conditions-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 2rem 1.5rem 2.5rem 1.5rem;
+    }
+    .toc {
+      margin-bottom: 2.5rem;
+      background: #f2f6ff;
+      border-radius: 1rem;
+      padding: 1.2rem 1.5rem;
+      font-size: 1.08rem;
+      box-shadow: 0 1px 6px rgba(45,124,245,0.07);
+    }
+    .toc-title { font-weight: bold; margin-bottom: 0.7rem; }
+    .toc ul { list-style: none; padding: 0; margin: 0; }
+    .toc li { margin-bottom: 0.5rem; }
+    .toc a { color: #2d7cf5; text-decoration: underline; cursor: pointer; }
+    .collapsible-section { margin-bottom: 1.7rem; border-bottom: 1px solid #eee; }
+    .collapsible-header {
+      font-size: 1.18rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.7rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.2s;
+    }
+    .collapsible-header:hover { background: #f2f6ff; }
+    .collapsible-content { display: none; padding-bottom: 1.2rem; }
+    .collapsible-section.active .collapsible-content { display: block; }
+    .collapsible-arrow {
+      font-size: 1.2rem;
+      margin-left: 10px;
+      transition: transform 0.2s;
+    }
+    .collapsible-section.active .collapsible-arrow { transform: rotate(90deg); }
+    .privacy-pdf {
+      max-width: 900px;
+      margin: 0 auto;
+      display: none;
+    }
+    .privacy-pdf.active { display: block; }
+    .privacy-pdf iframe {
+      width: 100%;
+      min-height: 600px;
+      border: none;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 600px) {
+      .conditions-wrapper, .privacy-pdf { padding: 1rem 0.2rem; }
+      .toc { padding: 1rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <header>
+    <h1 style="text-align:center;margin-top:2rem;">Conditions d'utilisation</h1>
+  </header>
+  <div style="text-align:center;">
+    <button id="showConditions" class="toggle-btn active">Voir les conditions</button>
+    <button id="showPrivacy" class="toggle-btn">Voir la politique de confidentialité (PDF)</button>
+  </div>
+  <div id="conditionsWrapper" class="conditions-wrapper active">
+    <nav class="toc">
+      <div class="toc-title">Sommaire</div>
+      <ul>
+        <li><a href="#section1">1. Introduction et acceptation des conditions</a></li>
+        <li><a href="#section2">2. Notre Service</a></li>
+        <li><a href="#section3">3. Création et gestion de votre compte</a></li>
+        <li><a href="#section4">4. Utilisation des Services</a></li>
+        <li><a href="#section5">5. Tarification et paiement</a></li>
+        <li><a href="#section6">6. Frais, amendes et sanctions</a></li>
+        <li><a href="#section7">7. Assurance et responsabilité</a></li>
+        <li><a href="#section8">8. Résiliation et suspension du compte</a></li>
+        <li><a href="#section9">9. Informations personnelles</a></li>
+        <li><a href="#section10">10. Propriétés</a></li>
+        <li><a href="#section11">11. Règlement des litiges</a></li>
+      </ul>
+    </nav>
+    <div class="collapsible-section active" id="section1">
+      <div class="collapsible-header">1. Introduction et acceptation des conditions <span class="collapsible-arrow">▶</span></div>
+      <div class="collapsible-content">
+        Merci d'avoir choisi Straik ! Les présentes Conditions Générales d'Utilisation (CGU) définissent les modalités d'utilisation des services fournis par Straik SAS (« Straik »), dont le siège social est situé au 44 Boulevard de Magenta, 75010 Paris, enregistrée sous le n° SIRET 931 259 360 00010 au R.C.S. Paris. Pour plus d’information rendez-vous sur notre site straik.fr<br><br>
+        En accédant à nos services (application mobile, site, véhicule, boutique partenaire, etc.), vous acceptez pleinement de vous conformer aux présentes Conditions générales d'utilisation.<br><br>
+        Nous nous réservons le droit de les modifier à tout moment, et toute version mise à jour prendra effet dès sa publication sur notre site Internet. Ces nouvelles Conditions remplaceront automatiquement toutes versions antérieures, y compris tout accord ou arrangement conclu précédemment avec vous.<br><br>
+        Vous êtes libre de cesser d'utiliser nos Services à tout moment. De notre côté, nous nous réservons également la possibilité de mettre un terme à ces Conditions ou à votre accès aux Services, en totalité ou en partie, notamment dans les cas suivants : impossibilité pour notre société de poursuivre ses opérations en cas de force majeure ou d’un problème technique majeur ; non-respect des présentes Conditions, notamment en cas de non-paiement après un délai de quinze (15) jours, de fourniture de données inexactes, incomplètes ou frauduleuses, de dommages répétés causés aux équipements, d’abandon du véhicule en dehors de l’espace privé de nos partenaires ou de toute autre infraction aux Conditions d'utilisation.<br><br>
+        Si vous souhaitez contester une suspension ou une résiliation de votre accès aux Services, vous pouvez nous contacter en nous envoyant un e-mail à l'adresse suivante : contact@straik.fr en précisant les détails de votre situation.<br><br>
+        Des conditions spécifiques s’appliquent aux abonnements à nos Services, notamment en ce qui concerne les notifications préalables aux modifications tarifaires ou aux changements importants des conditions d’abonnement. Vous trouverez davantage d’informations à ce sujet dans la section dédiée aux abonnements ci-dessous.
+      </div>
+    </div>
+    <div class="collapsible-section" id="section2">
+      <div class="collapsible-header">2. Notre Service <span class="collapsible-arrow">▶</span></div>
+      <div class="collapsible-content">
+        Straik met à disposition des trottinettes électriques accessibles via une application mobile (« Application ») et tout autre équipement associé tels que des casques ou des supports téléphones fournis ou mis à disposition par Straik. Nos services incluent également la maintenance, le stationnement, le support client et les solutions de recharge des véhicules.
+      </div>
+    </div>
+    <div class="collapsible-section" id="section3">
+      <div class="collapsible-header">3. Création et gestion de votre compte <span class="collapsible-arrow">▶</span></div>
+      <div class="collapsible-content">
+        <b>3.1. Inscription</b><br>
+        Pour utiliser nos services, vous devez créer un compte utilisateur personnel, en renseignant :<br>
+        • Nom, prénom, date de naissance<br>
+        • Adresse e-mail et/ou numéro de téléphone<br>
+        • Moyen de paiement valide (carte bancaire de débit ou crédit valide ou autre méthode approuvée)<br>
+        Votre compte est personnel et non transmissible. Vous êtes responsable de son utilisation et devez signaler toute activité suspecte à contact@straik.fr.<br><br>
+        <b>3.2. Lutte contre la fraude</b><br>
+        Straik se réserve le droit de suspendre ou de résilier un compte en cas de fraude, usage abusif ou information incorrecte. Nous pouvons également vérifier l'identité des utilisateurs avant d'autoriser certaines transactions. Vous devez impérativement utiliser un moyen de paiement dont vous êtes légalement autorisé à vous servir et nous autorisez à y prélever les frais qui vous reviennent.<br>
+        Si nous avons des raisons de penser que les informations que vous nous avez fournies sont erronées, incomplètes ou frauduleuses, nous nous réservons le droit de suspendre ou de clôturer votre compte après vous en avoir informé, et ce, jusqu’à la résolution du problème. Durant cette période, votre accès à tout ou partie de nos Services pourra être restreint, voire supprimé de manière temporaire ou définitive
+      </div>
+    </div>
+    <div class="collapsible-section" id="section4">
+      <div class="collapsible-header">4. Utilisation des Services <span class="collapsible-arrow">▶</span></div>
+      <div class="collapsible-content">
+        <b>4.1. Utilisation des trottinettes</b><br>
+        En utilisant nos Produits, vous vous engagez à respecter les règles d’utilisation spécifiques qui leur sont associées. Ces règles peuvent être mises à jour à tout moment selon notre appréciation, et nous vous notifierons en amont des changements significatifs via notre application.<br>
+        Nos véhicules sont mis à disposition en quantité limitée et leur disponibilité peut varier en fonction de la demande et des contraintes opérationnelles.<br>
+        Vérifiez sur l’application les horaires d’ouverture des partenaires et les places et trottinettes disponibles.<br>
+        Lorsque vous arrivez chez un partenaire, dirigez-vous directement vers les trottinettes sans demander l’autorisation au partenaire. En cas de besoin n’hésitez pas à demander de l’aide en boutique ou directement sur l’application.<br>
+        Nous vous demandons de charger les trottinettes avec les chargeurs prévus à cet effet chez nos partenaires afin de permettre à l’utilisateur suivant de disposer d’un niveau de batterie supérieur pour son trajet.<br>
+        Straik ne garantit pas que la trottinette dispose d'une charge suffisante pour la durée de votre trajet.<br>
+        Après avoir localisé une trottinette disponible via l'Application, vous devez :<br>
+        1. Effectuer un contrôle de sécurité (freins, pneus, charge de la batterie, etc.)<br>
+        2. Scanner le code QR pour déverrouiller la trottinette<br>
+        3. Respecter le code de la route et les règles de stationnement<br><br>
+        <b>4.2. Stationnement et fin de trajet</b><br>
+        Vous devez stationner la trottinette chez nos partenaires visibles sur l'Application. L’application permet le stationnement uniquement chez nos partenaires. Tout stationnement hors zone ou empiétant l’espace public peut entraîner des frais de déplacement et de récupération.<br><br>
+        <b>4.3. Règles de sécurité</b><br>
+        • Port du casque recommandé et encouragé, à cet effet nous mettons à votre disposition des casques chez nos partenaires<br>
+        • Interdiction d’actionner la trottinette chez le partenaire<br>
+        • Interdiction de rouler sur les trottoirs<br>
+        • Interdiction de transporter un passager ou des objets encombrants<br>
+        • Interdiction d’utiliser le téléphone portable pendant que vous roulez et tout objet pouvant se rapporter à des écouteurs<br>
+        • Interdiction de rouler sous influence d'alcool ou de drogues<br>
+        • Respect des limitations de vitesse et de la signalisation<br>
+        • Roulez au maximum sur les pistes cyclables lorsque celles-ci existent ou à défaut roulez toujours sur le côte droit de la chaussée<br>
+        • Interdiction d’utiliser nos Services afin de participer à des activités ne correspondant pas à l’usage normal.<br>
+        • Retournez un produit dans l’état dans lequel vous l’avez trouvé<br>
+        • La limite de poids maximale pour les trottinettes est de 120 kg<br>
+        En cas d'accident, vous devez le signaler immédiatement sur notre Application ou envoyer un mail à contact@straik.fr et contacter les autorités locales si nécessaire.
+      </div>
+    </div>
+    <div class="collapsible-section" id="section5">
+      <div class="collapsible-header">5. Tarification et paiement <span class="collapsible-arrow">▶</span></div>
+      <div class="collapsible-content">
+        <b>5.1. Modèle tarifaire, droits et annulation</b><br>
+        Nos services sont facturés selon le modèle suivant :<br>
+        • Frais de déverrouillage : affichés avant chaque trajet<br>
+        • Tarification à la minute : affichée avant chaque trajet<br>
+        • Abonnements : conditions et tarifs affichés sur l'Application. Si vous annulez un abonnement avant le délais de 14 jours suivant la date de souscription, les frais seront proportionnés au nombre de jours de souscription puisque les Services auront bien été fournis de notre part durant cette période.<br>
+        • Parrainage et codes promotionnels : Ces offres peuvent être soumises à des conditions spécifiques qui vous seront communiquées au moment de la promotion. Vous devrez en prendre connaissance et les accepter pour en profiter. Ces promotions sont limitées à une utilisation exclusive via notre Application et peuvent être modifiées ou supprimées à tout moment, à notre discrétion. Sauf mention contraire dans les conditions de l’offre, elles sont limitées à un usage par utilisateur et par compte, ne sont pas cumulables avec d’autres promotions, expirent selon les conditions fixées, ne peuvent être transférées à une autre personne ni revendues.<br>
+        Nos tarifs affichés incluent la TVA<br><br>
+        <b>5.2. Facturation et pré-autorisations</b><br>
+        Straik peut réaliser une pré-autorisation bancaire pour vérifier la validité du moyen de paiement. En cas d'échec de paiement, votre compte peut être suspendu jusqu'à régularisation.<br>
+        Vous restez responsable de tout solde impayé. En cas d’échec de prélèvement, nous nous réservons le droit d’essayer à nouveau d’encaisser le paiement en utilisant les différentes méthodes enregistrées sur votre compte.<br>
+        Si vous ne mettez pas à jour vos coordonnées bancaires, l’accès à nos Services pourrait être temporairement suspendu jusqu’à ce que les informations soient corrigées.<br>
+        Si vous constatez un prélèvement contestable sur votre compte, veuillez nous en informer dès que possible après en avoir pris connaissance. Pour examiner et traiter toute réclamation, nous aurons besoin d’informations précises sur votre trajet, notamment la date ainsi que les horaires approximatifs de départ et d’arrivée. Par principe, sauf en cas d’obligation légale ou si l’erreur nous est imputable, nous ne procédons pas à des remboursements pour l’utilisation de nos Services.
+      </div>
+    </div>
+    <div class="collapsible-section" id="section6">
+      <div class="collapsible-header">6. Frais, amendes et sanctions <span class="collapsible-arrow">▶</span></div>
+      <div class="collapsible-content">
+        Straik se réserve le droit d'appliquer des pénalités financières en cas de non-respect des règles, notamment :<br>
+        • Non-respect des règles de stationnement : Jusqu’à 250€<br>
+        • Dommages matériels causés au véhicule : facturation des réparations (pièce et main d’œuvre : Petites réparations (frein, béquille, …) : 50€ / Réparations moyennes (fourche, colonne de direction…) : 100€ / Grandes réparations (moteur, contrôleur, batterie) : 300€<br>
+        • Vol, perte, abandon : 1 000 € par trottinette<br>
+        • Non-respect du code de la route : En fonction de la loi en vigueur. Nous nous réservons le droit d’identifier l’utilisateur du trajet qui a conduit à une contravention et de le dénoncer aux autorités.
+      </div>
+    </div>
+    <div class="collapsible-section" id="section7">
+      <div class="collapsible-header">7. Assurance et responsabilité <span class="collapsible-arrow">▶</span></div>
+      <div class="collapsible-content">
+        <b>7.1. Assurance</b><br>
+        L'utilisation des trottinettes est couverte par une assurance responsabilité civile incluse dans nos services. Cette assurance couvre les dommages causés à des tiers.<br>
+        L'utilisateur demeure responsable des dommages corporels qu'il subit et de ceux causés à la trottinette.<br>
+        Vous avez l’obligation de nous déclarer tout accident.<br><br>
+        <b>7.2. Exonération de responsabilité</b><br>
+        Straik ne peut être tenu responsable des accidents, blessures ou dommages causés par une mauvaise utilisation des trottinettes. En utilisant nos Services, vous reconnaissez être conscient des risques inhérents à leur utilisation et acceptez qu’il vous incombe de les utiliser de manière responsable et sécurisée.<br>
+        Si un dommage vous affecte, touche des tiers ou cause des préjudices matériels, et que cela résulte uniquement de votre propre comportement – sans lien avec un manquement de notre part, l’intervention d’un tiers ou en cas de force majeure, vous en assumerez l’entière responsabilité.<br>
+        Vous acceptez d’assumer l’entière responsabilité de toute réclamation, action en justice, dommage, demande ou obligation résultant directement d’une violation de votre part des présentes Conditions d’utilisation ou de toute réglementation en vigueur ; De plus, vous reconnaissez que ces engagements resteront applicables même après la résiliation des présentes Conditions d’utilisation, la clôture de votre compte utilisateur ou l’arrêt de votre accès à nos Services, dans les limites prévues par la loi.
+      </div>
+    </div>
+    <div class="collapsible-section" id="section8">
+      <div class="collapsible-header">8. Résiliation et suspension du compte <span class="collapsible-arrow">▶</span></div>
+      <div class="collapsible-content">
+        Straik peut suspendre ou résilier votre compte en cas de :<br>
+        • Usage frauduleux ou non-respect des CGU<br>
+        • Non-paiement des sommes dues<br>
+        • Dommages répétés aux véhicules<br>
+        L'utilisateur peut également demander la clôture de son compte en écrivant un mail à contact@straik.fr.
+      </div>
+    </div>
+    <div class="collapsible-section" id="section9">
+      <div class="collapsible-header">9. Informations personnelles <span class="collapsible-arrow">▶</span></div>
+      <div class="collapsible-content">
+        Nous collectons et traitons vos données personnelles afin de vous fournir nos Services, sous réserve de votre consentement à notre Politique de confidentialité. Cela inclut notamment votre nom, vos coordonnées et vos informations de paiement, nécessaires à la création de votre compte et à l’utilisation de nos Services. Nous recueillons également des données relatives à vos trajets pour assurer le bon fonctionnement de nos prestations. Pour plus de détails sur la gestion de vos informations personnelles, nous vous invitons à consulter notre Politique de confidentialité.
+      </div>
+    </div>
+    <div class="collapsible-section" id="section10">
+      <div class="collapsible-header">10. Propriétés <span class="collapsible-arrow">▶</span></div>
+      <div class="collapsible-content">
+        <b>Licence limitée :</b> Nous vous accordons une licence d’utilisation restreinte, non exclusive, non transférable, non cessible et révocable pour accéder et utiliser notre application, nos logiciels et services sur votre appareil personnel, exclusivement pour votre usage personnel et non commercial. Tout droit non expressément accordé dans ces Conditions d’utilisation nous reste réservé ainsi qu’à nos partenaires. Vous n’êtes pas autorisé à copier, modifier, distribuer, vendre ou louer tout ou partie de nos services ou logiciels, ni à tenter d’accéder à leur code source par ingénierie inverse, sauf autorisation explicite de notre part. Il est interdit d’utiliser des moyens automatisés pour interagir avec nos services ou d’entraver leur bon fonctionnement.<br><br>
+        <b>Droits de propriété :</b> Tous nos services, y compris les contenus et fonctionnalités proposés, demeurent notre propriété exclusive. Leur utilisation ne vous confère aucun droit de propriété intellectuelle ni aucun autre droit que ceux prévus dans la licence accordée. Toute utilisation de nos marques, logos ou contenus sans notre consentement préalable est strictement interdite. De même, toute modification ou suppression des mentions légales liées à nos services est prohibée.<br><br>
+        <b>Contenus que vous fournissez :</b> Lorsque vous publiez ou soumettez des contenus sur nos plateformes (commentaires, suggestions, avis, etc.), vous conservez la propriété de ces contenus mais nous octroyons un droit d'utilisation mondiale et sans redevance pour les exploiter, reproduire, modifier, adapter, afficher et distribuer dans le cadre de nos services. Ce droit perdure même après la cessation de votre utilisation de nos services, pour une durée de 10 ans. Nous nous réservons le droit de supprimer tout contenu inapproprié ou illégal, y compris tout propos diffamatoire, offensant, haineux ou constituant du spam. Nous nous autorisons également à suspendre ou résilier tout compte ne respectant pas ces conditions.<br><br>
+        <b>Services et contenus tiers :</b> Nos services peuvent inclure des contenus ou être liés à des services fournis par des tiers, tels que des plateformes publicitaires ou des applications mobiles. Nous ne garantissons ni la disponibilité ni la qualité de ces services et déclinons toute responsabilité quant à leur utilisation. L’accès à nos services via des plateformes tierces est soumis aux conditions et politiques de confidentialité desdites plateformes.<br><br>
+        <b>Accès aux services :</b> L’utilisation de nos services requiert un accès à Internet et un matériel compatible. Vous êtes responsable des frais de connexion et de mise à jour de votre appareil pour garantir une utilisation optimale. Nous ne garantissons pas la compatibilité de nos services avec tous les équipements et ne sommes pas responsables des interruptions ou dysfonctionnements liés aux infrastructures de communication.
+      </div>
+    </div>
+    <div class="collapsible-section" id="section11">
+      <div class="collapsible-header">11. Règlement des litiges <span class="collapsible-arrow">▶</span></div>
+      <div class="collapsible-content">
+        Tout litige entre Straik et un utilisateur sera régi par le droit français. Si vous avez eu un incident en utilisant nos Services, vous devez nous en informer dans un délai de (6) mois suivant l’incident. En cas de différend, nous encourageons un règlement amiable. Si aucun accord n'est trouvé, les tribunaux de Paris seront seuls compétents.
+      </div>
+    </div>
+  </div>
+  <div id="privacyPDF" class="privacy-pdf">
+    <iframe src="Avis de ConfidentialitÃ©️ de Straik.pdf"></iframe>
+  </div>
+  <div id="footer-placeholder"></div>
+  <script>
+    // Toggle between conditions and privacy PDF
+    const showConditions = document.getElementById('showConditions');
+    const showPrivacy = document.getElementById('showPrivacy');
+    const conditionsWrapper = document.getElementById('conditionsWrapper');
+    const privacyPDF = document.getElementById('privacyPDF');
+    showConditions.addEventListener('click', function() {
+      showConditions.classList.add('active');
+      showPrivacy.classList.remove('active');
+      conditionsWrapper.classList.add('active');
+      privacyPDF.classList.remove('active');
+    });
+    showPrivacy.addEventListener('click', function() {
+      showPrivacy.classList.add('active');
+      showConditions.classList.remove('active');
+      privacyPDF.classList.add('active');
+      conditionsWrapper.classList.remove('active');
+    });
+    // Collapsible sections
+    document.querySelectorAll('.collapsible-header').forEach(header => {
+      header.addEventListener('click', function() {
+        const section = this.parentElement;
+        section.classList.toggle('active');
+      });
+    });
+    // Smooth scroll for TOC
+    document.querySelectorAll('.toc a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setTimeout(() => { target.classList.add('active'); }, 200);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

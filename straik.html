@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ff6f00">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-TileColor" content="#ff6f00">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" as="style">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="ChatGPT Image 14 juil. 2025, 12_55_00.png" as="image">
+  
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  
+  <title data-fr="Straik – Service de Micromobilité" data-en="Straik – Micromobility Service">Straik – Service de Micromobilité</title>
+  <link rel="icon" type="image/webp" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="mainHeader">
+    <div class="header-left">
+      <div class="logo">Straik</div>
+      <div class="lang-switcher" style="position:relative;margin-left:16px;">
+        <button class="lang-switch-btn" aria-label="Changer la langue" style="display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;border:1px solid #ddd;background:#fff;cursor:pointer;font-size:1rem;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Français" class="flag-img" style="width:22px;height:16px;object-fit:cover;">
+          <span class="lang-text">FR</span>
+          <span style="font-size:0.8em;margin-left:4px;">▼</span>
+        </button>
+        <div class="lang-options" style="display:none;position:absolute;top:110%;left:0;background:#fff;border:1px solid #ddd;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.08);min-width:110px;z-index:10;">
+          <button class="lang-option" data-lang="fr" style="display:flex;align-items:center;gap:7px;padding:8px 14px;width:100%;background:none;border:none;cursor:pointer;font-size:1rem;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Français" class="flag-img" style="width:22px;height:16px;object-fit:cover;"> Français
+          </button>
+          <button class="lang-option" data-lang="en" style="display:flex;align-items:center;gap:7px;padding:8px 14px;width:100%;background:none;border:none;cursor:pointer;font-size:1rem;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="English" class="flag-img" style="width:22px;height:16px;object-fit:cover;"> English
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="header-center">
+      <nav id="mainNav" aria-label="Navigation principale">
+        <a href="straik.html" data-page="home" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="apropos.html" data-page="apropos" data-fr="À propos" data-en="About">À propos</a>
+        <a href="magazine.html" data-page="magazine" data-fr="Actualité" data-en="News">Actualité</a>
+        <a href="aide.html" data-page="aide" data-fr="Aide & FAQ" data-en="Help & FAQ">Aide & FAQ</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <a href="partenariat.html" class="cta-btn header-download-btn" style="text-decoration:none;" data-page="partenariat" data-fr="Partenariat" data-en="Partnership">Partenariat</a>
+      <div class="hamburger" id="hamburgerMenu" aria-label="Ouvrir la navigation" tabindex="0" role="button" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main dynamic content container -->
+  <div id="app">
+    <!-- START: Main page content -->
+    <div class="hero" id="home">
+      <div class="hero-content">
+        <h1 data-fr="Connectée à la ville" data-en="Connected to the city">Connectée à la ville</h1>
+        <div style="display:flex;justify-content:center;margin-bottom:4rem;">
+          <button class="see-more-btn" onclick="scrollToSection('how')" data-fr="En savoir plus" data-en="Learn More">En savoir plus</button>
+        </div>
+      </div>
+      
+      <div class="hero-buttons">
+        
+      </div>
+    </div>
+
+    <section id="how">
+      <h2 data-fr="Comment utiliser Straik ?" data-en="How to use Straik?">Comment utiliser Straik ?</h2>
+      <div class="how-it-works">
+        <div class="step">
+          <img src="ChatGPT Image 14 juil. 2025, 14_09_09.png" alt="Trouvez un Véhicule" loading="lazy" style="width:280px;display:block;margin:0 auto 1rem;">
+          <div class="step-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3 style="display:none" data-fr="Trouvez un Véhicule" data-en="Find a Vehicle">Trouvez un Véhicule</h3>
+          <p data-fr="Trouve le partenaire le plus proche" data-en="find the nearest partner on the app">trouve sur l'application le partenaire le plus proche</p>
+        </div>
+        <div class="step">
+          <img src="ChatGPT Image 14 juil. 2025, 13_54_55.png" alt="Déverrouillez et Partez" loading="lazy" style="width:280px;display:block;margin:0 auto 1rem;">
+          <div class="step-icon"><i class="fas fa-qrcode"></i></div>
+          <h3 style="display:none" data-fr="Déverrouillez et Partez" data-en="Unlock and Go">Déverrouillez et Partez</h3>
+          <p data-fr="Scanne le QR code" data-en="scan the QR code">Scanne le QR code</p>
+        </div>
+        <div class="step">
+          <img src="ChatGPT Image 14 juil. 2025, 13_48_30.png" alt="Roulez en Sécurité" loading="lazy" style="width:280px;display:block;margin:0 auto 1rem;">
+          <div class="step-icon"><i class="fas fa-hard-hat"></i></div>
+          <h3 style="display:none" data-fr="Roulez en Sécurité" data-en="Ride Safely">Roulez en Sécurité</h3>
+          <p data-fr="Roule prudemment en respectant les règles de circulation" data-en="ride carefully following traffic rules">roule prudemment en respectant les règles de circulation</p>
+        </div>
+        <div class="step">
+          <img src="WhatsApp Image 2025-07-11 at 14.17.46.png" alt="Stationnez Responsablement" loading="lazy" style="width:280px;display:block;margin:0 auto 1rem;">
+          <div class="step-icon"><i class="fas fa-store"></i></div>
+          <h3 style="display:none" data-fr="Stationnez Responsablement" data-en="Park Responsibly">Stationnez Responsablement</h3>
+          <p data-fr="Termine le trajet chez le partenaire de ton choix" data-en="end the trip at your chosen partner">Termine le trajet chez le par
+        </div>
+      </div>
+      <div class="scroll-indicators">
+        <div class="scroll-dot active" data-step="0"></div>
+        <div class="scroll-dot" data-step="1"></div>
+        <div class="scroll-dot-slider"></div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 data-fr="Pourquoi choisir Straik ?" data-en="Why choose Straik?">Pourquoi choisir Straik ?</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-wallet"></i></div>
+          <h3 data-fr="Le Prix" data-en="The Price">Le Prix</h3>
+          <p data-fr="Straik est moins cher que les vélos en libre service" data-en="Straik is cheaper than bike sharing services">Straik est moins cher que les vélos en libre service</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-star"></i></div>
+          <h3 data-fr="La Qualité" data-en="The Quality">La Qualité</h3>
+          <p data-fr="Nos trottinettes de dernière génération sont très solides agréables à conduire et pensées pour les routes parisiennes" data-en="Our latest generation scooters are very solid, pleasant to drive and designed for Parisian roads">Nos trottinettes de dernière génération sont très solides agréables à conduire et pensées pour les routes parisiennes</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3 data-fr="La simplicité" data-en="Simplicity">La simplicité</h3>
+          <p data-fr="Un service simple sans prise de tête" data-en="A simple service without hassle">Un service simple sans prise de tête</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-area">
+      <h2 class="blog-title" data-fr="Actualité Straik" data-en="Straik News">Actualité Straik</h2>
+      <div class="blog-cards">
+        <div class="blog-card">
+          <div class="blog-card-image">
+            <img src="ChatGPT Image Jul 23, 2025, 02_29_02 AM.png" alt="Straik première bougie" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <a href="magazine-article.html" class="blog-card-title" style="text-decoration:none;color:inherit;cursor:pointer;" data-fr="Straik souffle sa première bougie : Quels avancements ?" data-en="Straik celebrates its first anniversary: What progress?">
+              Straik souffle sa première bougie : Quels avancements ?
+            </a>
+            <div class="blog-card-date" data-fr="Juillet 2025" data-en="July 2025">Juillet 2025</div>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-image">
+            <img src="ChatGPT Image Jul 24, 2025, 06_51_10 PM.png" alt="Création de Straik" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <a href="magazine-article-2.html" class="blog-card-title" style="text-decoration:none;color:inherit;cursor:pointer;" data-fr="Création de Straik : Quelle ambition ?" data-en="Creation of Straik: What ambition?">
+              Création de Straik : Quelle ambition ?
+            </a>
+            <div class="blog-card-date" data-fr="Juillet 2024" data-en="July 2024">Juillet 2024</div>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-image">
+            <img src="ChatGPT Image Jul 24, 2025, 07_51_44 PM.png" alt="Trottinettes électriques Paris" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <a href="magazine-article-3.html" class="blog-card-title" style="text-decoration:none;color:inherit;cursor:pointer;" data-fr="Pourquoi il n'y a plus de trottinette électrique en libre service à Paris ?" data-en="Why are there no more free-floating electric scooters in Paris?">
+              Pourquoi il n'y a plus de trottinette électrique en libre service à Paris ?
+            </a>
+            <div class="blog-card-date" data-fr="Septembre 2023" data-en="September 2023">Septembre 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="blog-more-btn-wrap">
+        <a href="magazine.html" class="blog-more-btn" style="display:inline-block;text-decoration:none;" data-fr="Voir plus" data-en="See more">Voir plus</a>
+      </div>
+    </section>
+    <!-- END: Main page content -->
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links-col">
+        <div class="footer-links-title" data-fr="Liens utiles" data-en="Useful links">Liens utiles</div>
+        <a href="aide.html" data-fr="FAQ" data-en="FAQ">FAQ</a>
+      </div>
+      <div class="footer-apps-col">
+        <div class="footer-links-title" data-fr="Téléchargez l'application" data-en="Download the app">Téléchargez l'application</div>
+        <div class="footer-app-badges">
+          <a href="#" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+          <a href="#" target="_blank"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a>
+        </div>
+      </div>
+      <div class="footer-socials-col">
+        <div class="footer-links-title" data-fr="Rejoins nous sur :" data-en="Join us on:">Rejoins nous sur :</div>
+        <div class="footer-socials">
+          <a href="#" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright" data-fr="© 2025 Straik. Tous droits réservés." data-en="© 2025 Straik. All rights reserved.">© 2025 Straik. Tous droits réservés.</div>
+  </footer>
+
+<script>
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+</script>
+<script>
+// Enhanced language switcher with translation functionality
+const langBtn = document.querySelector('.lang-switch-btn');
+const langOptions = document.querySelector('.lang-options');
+const langText = document.querySelector('.lang-text');
+const langFlag = langBtn ? langBtn.querySelector('img.flag-img') : null;
+
+const flags = {
+  fr: {
+    src: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg',
+    alt: 'Français',
+    code: 'FR'
+  },
+  en: {
+    src: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg',
+    alt: 'English',
+    code: 'EN'
+  }
+};
+
+function translatePage(lang) {
+  // Update all elements with translation attributes
+  const elementsToTranslate = document.querySelectorAll('[data-fr][data-en]');
+  
+  elementsToTranslate.forEach(element => {
+    const translation = element.getAttribute(`data-${lang}`);
+    if (translation) {
+      element.textContent = translation;
+    }
+  });
+  
+  // Update document title
+  const titleElement = document.querySelector('title');
+  if (titleElement) {
+    const titleTranslation = titleElement.getAttribute(`data-${lang}`);
+    if (titleTranslation) {
+      titleElement.textContent = titleTranslation;
+    }
+  }
+  
+  // Update HTML lang attribute
+  document.documentElement.lang = lang;
+}
+
+function setLang(lang) {
+  if(langFlag && langText && flags[lang]) {
+    langFlag.src = flags[lang].src;
+    langFlag.alt = flags[lang].alt;
+    langText.textContent = flags[lang].code;
+    localStorage.setItem('straik_lang', lang);
+    
+    // Translate the page content
+    translatePage(lang);
+  }
+}
+
+if(langBtn && langOptions) {
+  // Load saved language or default to French
+  const savedLang = localStorage.getItem('straik_lang') || 'fr';
+  if(savedLang && flags[savedLang]) {
+    setLang(savedLang);
+  }
+
+  langBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    langOptions.style.display = langOptions.style.display === 'block' ? 'none' : 'block';
+  });
+  
+  document.addEventListener('click', function() {
+    langOptions.style.display = 'none';
+  });
+  
+  langOptions.querySelectorAll('.lang-option').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const lang = this.getAttribute('data-lang');
+      setLang(lang);
+      langOptions.style.display = 'none';
+    });
+  });
+}
+
+// Initialize with saved language on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const savedLang = localStorage.getItem('straik_lang') || 'fr';
+  if (savedLang !== 'fr') {
+    translatePage(savedLang);
+  }
+});
+</script>
+<style>
+/* Blog area */
+.blog-area {
+  max-width: 1100px;
+  margin: 3rem auto 2.5rem auto;
+  padding: 0 1rem;
+}
+.blog-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.2rem;
+}
+.blog-cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.blog-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  overflow: hidden;
+  max-width: 320px;
+  flex: 1 1 260px;
+  min-width: 240px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.blog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.blog-card-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.blog-card-image img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.blog-card:hover .blog-card-image img {
+  transform: scale(1.03);
+}
+.blog-card-content {
+  padding: 1.5rem 1.2rem;
+}
+.blog-card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  display: block;
+  line-height: 1.4;
+  color: #333;
+}
+.blog-card-title:hover {
+  color: #333;
+}
+.blog-card-date {
+  color: #888;
+  font-size: 0.98rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.blog-more-btn-wrap {
+  text-align: center;
+  margin-top: 2.2rem;
+}
+.blog-more-btn {
+  padding: 0.7rem 2.2rem;
+  font-size: 1.1rem;
+  border-radius: 2rem;
+  border: 1.5px solid #2d7cf5;
+  background: #fff;
+  color: #2d7cf5;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+/* Footer */
+.footer {
+  background: #222;
+  color: #eee;
+  padding: 2.2rem 1rem 1.2rem 1rem;
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.footer-links-col, .footer-apps-col, .footer-socials-col {
+  min-width: 180px;
+  text-align: center;
+}
+.footer-links-title {
+  margin-bottom: 1.1rem;
+  font-weight: 600;
+}
+.footer-links-col a {
+  color: #eee;
+  text-decoration: underline;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.footer-app-badges img {
+  height: 44px;
+  margin: 0 6px;
+}
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.footer-socials i {
+  font-size: 1.6rem;
+  color: #eee;
+}
+.footer-copyright {
+  text-align: center;
+  margin-top: 2.2rem;
+  font-size: 0.98rem;
+}
+.floating-aide-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: #2d7cf5;
+  color: #fff;
+  border-radius: 50px;
+  padding: 14px 22px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.floating-aide-btn:hover {
+  background: #1a5bb8;
+}
+</style>
+<!-- Store Buttons -->
+<div class="store-buttons">
+  <a href="https://play.google.com/store" target="_blank" rel="noopener">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+  </a>
+  <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+  </a>
+</div>
+<!-- End Store Buttons -->
+</body>
+</html>
+<script src="main.js"></script>
+</html>
+</html>
