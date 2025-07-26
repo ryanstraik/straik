@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Straik Magazine – Article</title>
+  <link rel="icon" type="image/webp" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .simple-header {
+      background: #FE7305;
+      padding: 0.6rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      min-height: 60px;
+    }
+    .simple-header .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+    .simple-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .simple-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+    .simple-nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .simple-nav a.active {
+      background: rgba(255,255,255,0.3);
+      font-weight: 600;
+    }
+    .back-home {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .back-home:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    @media (max-width: 768px) {
+      .simple-header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .simple-nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+    /* Hide header only on article page */
+    #mainHeader { display: none !important; }
+    /* Set all article text to black */
+    .article-title,
+    .article-date,
+    .article-content {
+      color: #111 !important;
+    }
+    .article-main {
+      max-width: 800px;
+      margin: 3rem auto 2rem auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      padding: 2.5rem 2rem;
+    }
+    .article-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      text-align: left;
+    }
+    .article-date {
+      color: #2d7cf5;
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .article-photo {
+      width: 100%;
+      max-width: 650px;
+      height: auto;
+      margin: 1.5rem auto 2.5rem auto;
+      display: block;
+      border-radius: 16px;
+      object-fit: contain;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .article-photo:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    }
+    .article-content {
+      font-size: 1.15rem;
+      color: #222;
+      margin-top: 2rem;
+      line-height: 1.7;
+      text-align: justify;
+    }
+    @media (max-width: 700px) {
+      .article-main { padding: 1.2rem 0.5rem; }
+      .article-title { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="simple-header">
+    <a href="straik.html" class="logo">Straik</a>
+    <nav class="simple-nav">
+      <a href="straik.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="magazine.html" class="active">Actualité</a>
+      <a href="aide.html">Aide & FAQ</a>
+    </nav>
+    <a href="partenariat.html" class="back-home">Partenariat</a>
+  </header>
+
+  <main class="article-main">
+    <div class="article-title">Pourquoi il n’y a plus de trottinette électrique en libre service à Paris ?</div>
+    <div class="article-date">Septembre 2023</div>
+    <img src="ChatGPT Image Jul 24, 2025, 07_51_44 PM.png" alt="photo" class="article-photo">
+    <div class="article-content">
+      Depuis le 1er septembre 2023, conformément aux résultats de la consultation citoyenne organisée par la ville de Paris le 2 avril 2023, le contrat d’occupation du domaine public qui liait la municipalité aux opérateurs traditionnels de mobilité (Dott, Lime et Tier) n’a pas été renouvelé suite à son expiration le 31 août 2023.<br><br>
+      Ainsi, Paris qui était autrefois la capitale européenne de la trottinette électrique en libre service se retrouve du jour au lendemain sans trottinette au grand désarroi des 400 000 utilisateurs réguliers.<br><br>
+      La tentative de report modal vers le vélo n’a pas fonctionné. À quand une solution alternative incluant la trottinette?
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Straik. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>

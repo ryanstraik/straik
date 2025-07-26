@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Straik Magazine</title>
+  <link rel="icon" type="image/webp" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .simple-header {
+      background: #FE7305;
+      padding: 0.6rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      min-height: 60px;
+    }
+    .simple-header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+    .simple-nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .simple-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.4rem 0.8rem;
+      border-radius: 18px;
+      transition: background 0.3s;
+      font-size: 0.95rem;
+    }
+    .simple-nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .simple-nav a.active {
+      background: rgba(255,255,255,0.3);
+      font-weight: 600;
+    }
+    .back-home {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+      font-size: 0.9rem;
+    }
+    .back-home:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    @media (max-width: 768px) {
+      .simple-header {
+        padding: 0.5rem 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        min-height: auto;
+      }
+      .simple-nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .simple-header .logo {
+        font-size: 1.3rem;
+      }
+    }
+    .magazine-main {
+      max-width: 900px;
+      margin: 3rem auto 2rem auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      padding: 2.5rem 2rem;
+    }
+    .magazine-title {
+      text-align: center;
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 2.2rem;
+      letter-spacing: 0.01em;
+    }
+    .magazine-section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #FE7305;
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+    .magazine-articles {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+    }
+    .magazine-article {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1.5rem;
+    }
+    .magazine-article:last-child {
+      border-bottom: none;
+    }
+    .magazine-article-info {
+      flex: 2 1 320px;
+    }
+    .magazine-article-date {
+      color: #FE7305;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .magazine-article-title {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .magazine-article-photo {
+      flex: 1 1 120px;
+      min-width: 120px;
+      max-width: 180px;
+      aspect-ratio: 16/10;
+      background: #eaeaea;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+    .magazine-article-photo img {
+      width: 280px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+    .magazine-pagination {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 1.1rem;
+      color: #FE7305;
+      font-weight: 600;
+    }
+    @media (max-width: 700px) {
+      .magazine-main { padding: 1.2rem 0.5rem; }
+      .magazine-title { font-size: 1.4rem; }
+      .magazine-article { flex-direction: column; gap: 0.7rem; }
+      .magazine-article-photo { max-width: 100%; min-width: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="simple-header">
+    <a href="straik.html" class="logo">Straik</a>
+    <nav class="simple-nav">
+      <a href="straik.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="magazine.html" class="active">Actualité</a>
+      <a href="aide.html">Aide & FAQ</a>
+    </nav>
+    <a href="partenariat.html" class="back-home">Partenariat</a>
+  </header>
+
+  <main class="magazine-main">
+    <div class="magazine-title">Straik Magazine</div>
+    <div class="magazine-section-title">Les plus récents</div>
+    <div class="magazine-articles">
+      <div class="magazine-article">
+        <div class="magazine-article-info">
+          <div class="magazine-article-date">Juillet 2025</div>
+          <a href="magazine-article.html" class="magazine-article-title" style="color:inherit;text-decoration:underline;cursor:pointer;">Straik souffle sa première bougie :<br>Quels avancements ?</a>
+        </div>
+        <a href="magazine-article.html" class="magazine-article-photo" style="text-decoration:none;color:#aaa;">
+          <img src="ChatGPT Image Jul 23, 2025, 02_29_02 AM.png" alt="Straik souffle sa première bougie" style="width:100%;height:auto;border-radius:10px;object-fit:cover;">
+        </a>
+      </div>
+      <div class="magazine-article">
+        <div class="magazine-article-info">
+          <div class="magazine-article-date">Juillet 2024</div>
+          <a href="magazine-article-2.html" class="magazine-article-title" style="color:inherit;text-decoration:underline;cursor:pointer;">Création de Straik :<br>Quelle ambition ?</a>
+        </div>
+        <a href="magazine-article-2.html" class="magazine-article-photo" style="text-decoration:none;color:#aaa;">
+          <img src="ChatGPT Image Jul 24, 2025, 06_51_10 PM.png" alt="Création de Straik : Quelle ambition ?" style="width:100%;height:auto;border-radius:10px;object-fit:cover;">
+        </a>
+      </div>
+      <div class="magazine-article">
+        <div class="magazine-article-info">
+          <div class="magazine-article-date">Septembre 2023</div>
+          <a href="magazine-article-3.html" class="magazine-article-title" style="color:inherit;text-decoration:underline;cursor:pointer;">Pourquoi il n'y a plus de trottinette électrique en libre-service à Paris ?</a>
+        </div>
+        <a href="magazine-article-3.html" class="magazine-article-photo" style="text-decoration:none;color:#aaa;">
+          <img src="ChatGPT Image Jul 24, 2025, 07_51_44 PM.png" alt="Pourquoi il n'y a plus de trottinette électrique en libre service à Paris ?" style="width:100%;height:auto;border-radius:10px;object-fit:cover;">
+        </a>
+      </div>
+    </div>
+    <div class="magazine-pagination">page 1</div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Straik. Tous droits réservés.</p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

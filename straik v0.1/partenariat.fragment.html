@@ -1,0 +1,126 @@
+<main class="partenariat-main">
+  <div class="partenariat-intro">Si vous aussi vous partagez nos valeurs et vous souhaitez devenir partenaire, nous serions ravis d’échanger avec vous</div>
+  <button class="partenariat-btn" id="ctaPartenariatBtn">C’est parti</button>
+  <form class="partenariat-form" id="partenariatForm">
+    <div>
+      <label for="entreprise">Entreprise</label>
+      <input type="text" id="entreprise" name="entreprise" required>
+    </div>
+    <div>
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="nom" required>
+    </div>
+    <div>
+      <label for="prenom">Prénom</label>
+      <input type="text" id="prenom" name="prenom">
+    </div>
+    <div>
+      <label for="mail">Mail</label>
+      <input type="email" id="mail" name="mail">
+    </div>
+    <div>
+      <label for="tel">Tel</label>
+      <input type="tel" id="tel" name="tel">
+    </div>
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Donnez un maximum de détail svp"></textarea>
+    </div>
+    <button type="submit">Envoi</button>
+  </form>
+  <div id="partenariatSuccess" style="display:none;margin-top:1.5rem;color:#2d7cf5;font-weight:600;font-size:1.15rem;text-align:center;">Merci pour votre message ! Nous vous répondrons rapidement.</div>
+</main>
+<style>
+  .partenariat-main {
+    max-width: 600px;
+    margin: 3rem auto 2rem auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .partenariat-intro {
+    font-size: 1.25rem;
+    margin-bottom: 2.2rem;
+    font-weight: 500;
+  }
+  .partenariat-btn {
+    background: #2d7cf5;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.8rem 2.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 2.2rem;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+  .partenariat-btn:hover {
+    background: #1a5bb8;
+  }
+  .partenariat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .partenariat-form label {
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+  .partenariat-form input, .partenariat-form textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+  }
+  .partenariat-form textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+  .partenariat-form button[type="submit"] {
+    background: #2d7cf5;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.8rem 2.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.7rem;
+    transition: background 0.2s;
+  }
+  .partenariat-form button[type="submit"]:hover {
+    background: #1a5bb8;
+  }
+  @media (max-width: 700px) {
+    .partenariat-main { padding: 1.2rem 0.5rem; }
+  }
+</style>
+<script>
+// Smooth scroll to form
+const ctaBtn = document.getElementById('ctaPartenariatBtn');
+if (ctaBtn) {
+  ctaBtn.onclick = function() {
+    const form = document.getElementById('partenariatForm');
+    if (form) form.scrollIntoView({behavior: 'smooth'});
+  };
+}
+// Form submit with instant feedback
+const form = document.getElementById('partenariatForm');
+if (form) {
+  form.onsubmit = function(e) {
+    e.preventDefault();
+    form.style.display = 'none';
+    const success = document.getElementById('partenariatSuccess');
+    if (success) success.style.display = 'block';
+  };
+}
+</script> 

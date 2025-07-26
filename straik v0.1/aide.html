@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ & Contact Straik</title>
+  <link rel="icon" type="image/webp" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: #f7f7f7; }
+    .simple-header {
+      background: #FE7305;
+      padding: 0.6rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      min-height: 60px;
+    }
+    .simple-header .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+    .simple-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .simple-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+    .simple-nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .simple-nav a.active {
+      background: rgba(255,255,255,0.3);
+      font-weight: 600;
+    }
+    .back-home {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .back-home:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    @media (max-width: 768px) {
+      .simple-header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .simple-nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+    .faq-container {
+      max-width: 700px;
+      margin: 2.5rem auto 2rem auto;
+      background: #fff;
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 2.2rem 1.5rem 2.5rem 1.5rem;
+    }
+    .faq-header {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+    .faq-intro {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .faq-list { margin-bottom: 2.5rem; }
+    .faq-item {
+      border-radius: 0.8rem;
+      border: 1px solid #e0e0e0;
+      margin-bottom: 1rem;
+      background: #fafbff;
+      box-shadow: 0 1px 4px rgba(45,124,245,0.04);
+    }
+    .faq-question {
+      cursor: pointer;
+      padding: 1rem 1.2rem;
+      font-size: 1.08rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.2s;
+    }
+    .faq-question:hover { background: #f2f6ff; }
+    .faq-answer {
+      display: none;
+      padding: 0 1.2rem 1rem 1.2rem;
+      font-size: 1.04rem;
+      color: #333;
+    }
+    .faq-item.active .faq-answer { display: block; }
+    .faq-arrow { font-size: 1.2rem; transition: transform 0.2s; }
+    .faq-item.active .faq-arrow { transform: rotate(90deg); }
+    .contact-title { font-size: 1.2rem; font-weight: 600; margin: 2.5rem 0 1.2rem 0; text-align: center; }
+    .contact-form { max-width: 600px; margin: 0 auto; }
+    .form-row { margin-bottom: 1.1rem; }
+    .form-row label { display: block; font-weight: 500; margin-bottom: 0.3rem; }
+    .form-row input, .form-row select, .form-row textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      background: #f9f9f9;
+    }
+    .form-row textarea { min-height: 90px; }
+    .form-row .radio-group { display: flex; gap: 1.5rem; margin-top: 0.3rem; }
+    .form-row .radio-group label { font-weight: 400; margin-bottom: 0; }
+    .form-submit-btn {
+      display: block;
+      margin: 1.5rem auto 0 auto;
+      padding: 0.8rem 2.5rem;
+      font-size: 1.1rem;
+      border-radius: 2rem;
+      border: 1.5px solid #2d7cf5;
+      background: #2d7cf5;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .form-submit-btn:hover { background: #1a5bb8; }
+    @media (max-width: 600px) {
+      .faq-container { padding: 1rem 0.2rem; }
+      .contact-form { padding: 0 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="simple-header">
+    <a href="straik.html" class="logo">Straik</a>
+    <nav class="simple-nav">
+      <a href="straik.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="magazine.html">Actualité</a>
+      <a href="aide.html" class="active">Aide & FAQ</a>
+    </nav>
+    <a href="partenariat.html" class="back-home">Partenariat</a>
+  </header>
+  <div class="faq-container">
+    <div class="faq-header">Détendez-vous, nous sommes là pour vous.</div>
+    <div class="faq-intro"><b>FAQ</b> (Dans 90% des cas, votre réponse se trouve ci-dessous)</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Je n'arrive pas à télécharger l'application <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Assurez-vous d'avoir une connexion internet stable et suffisamment d'espace sur votre téléphone. Essayez de redémarrer votre appareil ou de mettre à jour votre système d'exploitation. Si le problème persiste, contactez-nous via le formulaire ci-dessous.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Je n'arrive pas à créer un compte <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Vérifiez que toutes les informations saisies sont correctes et que vous avez bien accepté les conditions d'utilisation. Si vous avez déjà un compte, essayez de réinitialiser votre mot de passe.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Je n'arrive pas à trouver ou démarrer une trottinette <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Vérifiez que vous êtes bien dans une zone couverte par Straik et que la trottinette est disponible sur l'application. Si besoin, demandez de l'aide à un partenaire en boutique.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">J'ai rencontré un problème pendant mon trajet <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Arrêtez-vous en sécurité et contactez le support via l'application ou le formulaire ci-dessous. Décrivez le problème rencontré pour une assistance rapide.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Je n'arrive pas à terminer mon trajet <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Assurez-vous d'être dans une zone de stationnement autorisée chez un partenaire. Si le problème persiste, contactez le support.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Je rencontre un problème avec un partenaire <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Expliquez-nous la situation via le formulaire de contact ci-dessous. Nous ferons le nécessaire pour résoudre le problème avec le partenaire concerné.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Je rencontre un problème avec la trottinette <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Merci de préciser le problème rencontré (batterie, freins, etc.) dans le formulaire de contact. Nous interviendrons rapidement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Je souhaite une facture ou un reçu <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Vous pouvez demander une facture ou un reçu via le formulaire de contact ci-dessous en précisant votre adresse e-mail et les détails de votre trajet.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Je rencontre un problème avec l'application <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Essayez de redémarrer l'application ou de la mettre à jour. Si le problème persiste, décrivez-le dans le formulaire de contact.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Je rencontre un problème avec mon abonnement <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Merci de préciser le problème rencontré avec votre abonnement dans le formulaire de contact. Nous vous répondrons rapidement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Question concernant mes données <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Pour toute question sur vos données personnelles, consultez notre politique de confidentialité ou contactez-nous via le formulaire.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Quelles sont les règles de circulation ? <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Respectez le code de la route, portez un casque, ne roulez pas sur les trottoirs, et privilégiez les pistes cyclables. Plus d'infos dans nos conditions d'utilisation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Je rencontre un problème avec le paiement <span class="faq-arrow">▶</span></div>
+        <div class="faq-answer">Vérifiez que votre moyen de paiement est valide. Si besoin, contactez votre banque ou décrivez le problème dans le formulaire ci-dessous.</div>
+      </div>
+    </div>
+    <div class="contact-title">Si vous n'avez pas trouvé de réponse à votre question, merci de remplir ce formulaire de contact :</div>
+    <form class="contact-form">
+      <div class="form-row"><label for="nom">Nom</label><input type="text" id="nom" name="nom"></div>
+      <div class="form-row"><label for="prenom">Prénom*</label><input type="text" id="prenom" name="prenom" required></div>
+      <div class="form-row"><label for="email">Email*</label><input type="email" id="email" name="email" required></div>
+      <div class="form-row"><label for="tel">Téléphone</label><input type="tel" id="tel" name="tel"></div>
+      <div class="form-row"><label for="objet">Objet</label>
+        <select id="objet" name="objet">
+          <option>Problème avec l'application</option>
+          <option>Problème avec la trottinette</option>
+          <option>Problème avec le paiement</option>
+          <option>Problème avec un partenaire</option>
+          <option>Problème administratif</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-row"><label>Avez-vous un compte ?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="compte" value="oui"> Oui</label>
+          <label><input type="radio" name="compte" value="non"> Non</label>
+        </div>
+      </div>
+      <div class="form-row"><label for="message">Message</label><textarea id="message" name="message" placeholder="Donnez un maximum de détails svp."></textarea></div>
+      <button type="submit" class="form-submit-btn">Envoyer</button>
+    </form>
+  </div>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', function() {
+        const item = this.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+    // (Optional) Prevent form submission for demo
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Votre message a bien été envoyé ! (Démo)');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
