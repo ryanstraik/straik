@@ -18,8 +18,8 @@
   <link rel="dns-prefetch" href="//developer.apple.com">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/webp" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
-  <link rel="apple-touch-icon" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
+  <link rel="icon" type="image/png" href="1753882816685.png">
+  <link rel="apple-touch-icon" href="1753882816685.png">
   
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -437,6 +437,13 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+      }
+    }
+    
+    /* Hide Partenariat and Contact buttons on mobile for all pages except main page */
+    @media (max-width: 768px) {
+      .cta-button {
+        display: none !important;
       }
     }
   </style>

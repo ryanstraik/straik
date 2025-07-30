@@ -22,7 +22,7 @@
   <meta property="twitter:image" content="ChatGPT Image Jul 24, 2025, 06_51_10 PM.png">
   
   <title>Création de Straik: Quelle ambition ? | Straik Magazine</title>
-  <link rel="icon" type="image/webp" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
+  <link rel="icon" type="image/png" href="1753882816685.png">
   <link rel="canonical" href="https://straik.com/magazine-article-2.html">
   
   <!-- Preload critical resources -->
@@ -379,6 +379,13 @@
     button:focus {
       outline: 3px solid #3b82f6;
       outline-offset: 2px;
+    }
+    
+    /* Hide Partenariat and Contact buttons on mobile for all pages except main page */
+    @media (max-width: 768px) {
+      .cta-button {
+        display: none !important;
+      }
     }
   </style>
 </head>

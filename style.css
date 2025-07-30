@@ -573,6 +573,10 @@ header:has(.mobile-nav-overlay.open) ~ main {
   .mobile-menu-btn {
     display: flex;
   }
+  
+  .section-title {
+    margin-bottom: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -589,16 +593,16 @@ header:has(.mobile-nav-overlay.open) ~ main {
 
 /* Section Styles */
 .section-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   color: #222;
 }
 
 /* How It Works Section */
 .how-section {
-  padding: 4rem 0;
+  padding: 3rem 0;
   background: #f8f9fa;
 }
 
@@ -661,7 +665,7 @@ header:has(.mobile-nav-overlay.open) ~ main {
 
 /* Features Section */
 .features-section {
-  padding: 4rem 0;
+  padding: 3rem 0;
   background: white;
 }
 
@@ -1005,7 +1009,7 @@ header:has(.mobile-nav-overlay.open) ~ main {
   }
   
   .section-title {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
   }
 }
 
@@ -1193,6 +1197,17 @@ header:has(.mobile-nav-overlay.open) ~ main {
   
   .mobile-nav-content {
     background: #FF7205 !important;
+  }
+  
+  /* Hide Partenariat and Contact buttons on mobile for all pages except main page */
+  body:not(.home-page) .cta-button {
+    display: none !important;
+  }
+  
+  /* Additional rule to ensure buttons are hidden on mobile for non-home pages */
+  body:not(.home-page) .header .cta-button,
+  body:not(.home-page) .header-content .cta-button {
+    display: none !important;
   }
 }
 
