@@ -3,216 +3,543 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Straik Magazine</title>
+  <meta name="description" content="Straik Magazine - Actualités et articles sur la mobilité urbaine et les trottinettes électriques">
+  <title>Straik Magazine - Actualités</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+  <link rel="preload" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp" as="image">
+  
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/webp" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  
   <style>
-    .simple-header {
-      background: #FE7305;
-      padding: 0.6rem 2rem;
+    /* CSS Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Header Styles */
+    .header {
+      background: linear-gradient(135deg, #FE7305 0%, #ff8c42 100%);
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 20px rgba(254, 115, 5, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      min-height: 60px;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-    .simple-header .logo {
-      font-size: 1.5rem;
+    
+    .logo {
+      font-size: 2rem;
       font-weight: 700;
       color: white;
       text-decoration: none;
+      transition: transform 0.3s ease;
     }
-    .simple-nav {
+    
+    .logo:hover {
+      transform: scale(1.05);
+    }
+    
+    .nav {
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
       align-items: center;
     }
-    .simple-nav a {
+    
+    .nav a {
       color: white;
       text-decoration: none;
       font-weight: 500;
-      padding: 0.4rem 0.8rem;
-      border-radius: 18px;
-      transition: background 0.3s;
-      font-size: 0.95rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .simple-nav a:hover {
-      background: rgba(255,255,255,0.2);
+    
+    .nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.3s ease;
     }
-    .simple-nav a.active {
-      background: rgba(255,255,255,0.3);
+    
+    .nav a:hover::before {
+      left: 0;
+    }
+    
+    .nav a.active {
+      background: rgba(255, 255, 255, 0.25);
       font-weight: 600;
     }
-    .back-home {
-      background: rgba(255,255,255,0.2);
+    
+    .cta-button {
+      background: rgba(255, 255, 255, 0.2);
       color: white;
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s;
-      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
     }
-    .back-home:hover {
-      background: rgba(255,255,255,0.3);
+    
+    .cta-button:hover {
+      background: white;
+      color: #FE7305;
+      border-color: white;
     }
-    @media (max-width: 768px) {
-      .simple-header {
-        padding: 0.5rem 1rem;
-        flex-direction: column;
-        gap: 0.5rem;
-        min-height: auto;
-      }
-      .simple-nav {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .simple-header .logo {
-        font-size: 1.3rem;
-      }
+    
+    /* Mobile Menu */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
     }
-    .magazine-main {
-      max-width: 900px;
-      margin: 3rem auto 2rem auto;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-      padding: 2.5rem 2rem;
+    
+    /* Main Content */
+    .main {
+      max-width: 1000px;
+      margin: 3rem auto;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
     }
+    
+    .main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #FE7305, #ff8c42, #FE7305);
+    }
+    
     .magazine-title {
       text-align: center;
-      font-size: 2.3rem;
+      font-size: 3rem;
       font-weight: 700;
-      margin-bottom: 2.2rem;
-      letter-spacing: 0.01em;
+      margin-bottom: 3rem;
+      background: linear-gradient(135deg, #FE7305, #ff8c42);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .magazine-section-title {
-      font-size: 1.3rem;
+    
+    .section-title {
+      font-size: 1.5rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid #FE7305;
-      display: inline-block;
-      padding-bottom: 0.2rem;
+      margin-bottom: 2rem;
+      color: #333;
+      position: relative;
+      padding-bottom: 0.5rem;
     }
-    .magazine-articles {
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #FE7305, #ff8c42);
+      border-radius: 2px;
+    }
+    
+    .articles-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    .article-card {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      border-radius: 20px;
+      background: #fafbff;
+      border: 1px solid #e0e0e0;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-color: #FE7305;
+    }
+    
+    .article-info {
+      flex: 2;
       display: flex;
       flex-direction: column;
-      gap: 2.2rem;
-    }
-    .magazine-article {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 1.5rem;
-    }
-    .magazine-article:last-child {
-      border-bottom: none;
-    }
-    .magazine-article-info {
-      flex: 2 1 320px;
-    }
-    .magazine-article-date {
-      color: #FE7305;
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-    .magazine-article-title {
-      font-size: 1.15rem;
-      font-weight: 500;
-      margin-bottom: 0.2rem;
-    }
-    .magazine-article-photo {
-      flex: 1 1 120px;
-      min-width: 120px;
-      max-width: 180px;
-      aspect-ratio: 16/10;
-      background: #eaeaea;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      color: #aaa;
-      font-size: 1.1rem;
-      font-style: italic;
     }
-    .magazine-article-photo img {
-      width: 280px;
-      height: auto;
-      border-radius: 10px;
+    
+    .article-date {
+      color: #FE7305;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .article-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    
+    .article-excerpt {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    .article-image {
+      flex: 1;
+      min-width: 200px;
+      max-width: 250px;
+      aspect-ratio: 16/10;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .article-image img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      display: block;
-      margin: 0 auto;
+      transition: transform 0.3s ease;
     }
-    .magazine-pagination {
+    
+    .article-card:hover .article-image img {
+      transform: scale(1.05);
+    }
+    
+    .pagination {
       text-align: center;
-      margin-top: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e0e0e0;
+    }
+    
+    .pagination-text {
       font-size: 1.1rem;
       color: #FE7305;
       font-weight: 600;
     }
-    @media (max-width: 700px) {
-      .magazine-main { padding: 1.2rem 0.5rem; }
-      .magazine-title { font-size: 1.4rem; }
-      .magazine-article { flex-direction: column; gap: 0.7rem; }
-      .magazine-article-photo { max-width: 100%; min-width: 80px; }
+    
+    /* Footer */
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .article-card {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .article-card:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    
+    .article-card:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .header {
+        padding: 1rem;
+      }
+      
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .nav.active {
+        display: flex;
+      }
+      
+      .mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+      
+      .logo {
+        font-size: 1.8rem;
+      }
+      
+      .main {
+        margin: 2rem 1rem;
+        padding: 2rem;
+      }
+      
+      .magazine-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+      
+      .article-card {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+      
+      .article-image {
+        min-width: 100%;
+        max-width: 100%;
+        order: -1;
+      }
+      
+      .article-title {
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .main {
+        margin: 1rem 0.5rem;
+        padding: 1.5rem;
+      }
+      
+      .magazine-title {
+        font-size: 2rem;
+      }
+      
+      .article-card {
+        padding: 1rem;
+      }
+      
+      .article-title {
+        font-size: 1.1rem;
+      }
+    }
+    
+    /* High DPI displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .main {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      }
+    }
+    
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="simple-header">
-    <a href="straik.html" class="logo">Straik</a>
-    <nav class="simple-nav">
-      <a href="straik.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="magazine.html" class="active">Actualité</a>
-      <a href="aide.html">Aide & FAQ</a>
-    </nav>
-    <a href="partenariat.html" class="back-home">Partenariat</a>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo">Straik</a>
+      <button class="mobile-menu-toggle" aria-label="Menu mobile">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="magazine.html" class="active">Actualité</a>
+        <a href="aide.html">Aide & FAQ</a>
+      </nav>
+      <a href="partenariat.html" class="cta-button">Partenariat</a>
+    </div>
   </header>
 
-  <main class="magazine-main">
-    <div class="magazine-title">Straik Magazine</div>
-    <div class="magazine-section-title">Les plus récents</div>
-    <div class="magazine-articles">
-      <div class="magazine-article">
-        <div class="magazine-article-info">
-          <div class="magazine-article-date">Juillet 2025</div>
-          <a href="magazine-article.html" class="magazine-article-title" style="color:inherit;text-decoration:underline;cursor:pointer;">Straik souffle sa première bougie :<br>Quels avancements ?</a>
+  <main class="main">
+    <h1 class="magazine-title">Straik Magazine</h1>
+    
+    <h2 class="section-title">Les plus récents</h2>
+    
+    <div class="articles-grid">
+      <a href="magazine-article.html" class="article-card">
+        <div class="article-info">
+          <div class="article-date">Juillet 2025</div>
+          <h3 class="article-title">Straik souffle sa première bougie : Quels avancements ?</h3>
+          <p class="article-excerpt">
+            Un an après sa création administrative, Straik dévoile ses avancements remarquables avec près de 500 partenaires et une application finalisée.
+          </p>
         </div>
-        <a href="magazine-article.html" class="magazine-article-photo" style="text-decoration:none;color:#aaa;">
-          <img src="ChatGPT Image Jul 23, 2025, 02_29_02 AM.png" alt="Straik souffle sa première bougie" style="width:100%;height:auto;border-radius:10px;object-fit:cover;">
-        </a>
-      </div>
-      <div class="magazine-article">
-        <div class="magazine-article-info">
-          <div class="magazine-article-date">Juillet 2024</div>
-          <a href="magazine-article-2.html" class="magazine-article-title" style="color:inherit;text-decoration:underline;cursor:pointer;">Création de Straik :<br>Quelle ambition ?</a>
+        <div class="article-image">
+          <img src="ChatGPT Image Jul 23, 2025, 02_29_02 AM.png" alt="Straik souffle sa première bougie" loading="lazy">
         </div>
-        <a href="magazine-article-2.html" class="magazine-article-photo" style="text-decoration:none;color:#aaa;">
-          <img src="ChatGPT Image Jul 24, 2025, 06_51_10 PM.png" alt="Création de Straik : Quelle ambition ?" style="width:100%;height:auto;border-radius:10px;object-fit:cover;">
-        </a>
-      </div>
-      <div class="magazine-article">
-        <div class="magazine-article-info">
-          <div class="magazine-article-date">Septembre 2023</div>
-          <a href="magazine-article-3.html" class="magazine-article-title" style="color:inherit;text-decoration:underline;cursor:pointer;">Pourquoi il n'y a plus de trottinette électrique en libre-service à Paris ?</a>
+      </a>
+      
+      <a href="magazine-article-2.html" class="article-card">
+        <div class="article-info">
+          <div class="article-date">Juillet 2024</div>
+          <h3 class="article-title">Création de Straik : Quelle ambition ?</h3>
+          <p class="article-excerpt">
+            Découvrez les ambitions et la vision qui ont donné naissance à Straik, une nouvelle approche de la mobilité urbaine parisienne.
+          </p>
         </div>
-        <a href="magazine-article-3.html" class="magazine-article-photo" style="text-decoration:none;color:#aaa;">
-          <img src="ChatGPT Image Jul 24, 2025, 07_51_44 PM.png" alt="Pourquoi il n'y a plus de trottinette électrique en libre service à Paris ?" style="width:100%;height:auto;border-radius:10px;object-fit:cover;">
-        </a>
-      </div>
+        <div class="article-image">
+          <img src="ChatGPT Image Jul 24, 2025, 06_51_10 PM.png" alt="Création de Straik : Quelle ambition ?" loading="lazy">
+        </div>
+      </a>
+      
+      <a href="magazine-article-3.html" class="article-card">
+        <div class="article-info">
+          <div class="article-date">Septembre 2023</div>
+          <h3 class="article-title">Pourquoi il n'y a plus de trottinette électrique en libre-service à Paris ?</h3>
+          <p class="article-excerpt">
+            Analyse des raisons qui ont mené à la disparition des trottinettes en libre-service à Paris et les perspectives d'avenir.
+          </p>
+        </div>
+        <div class="article-image">
+          <img src="ChatGPT Image Jul 24, 2025, 07_51_44 PM.png" alt="Trottinettes électriques à Paris" loading="lazy">
+        </div>
+      </a>
     </div>
-    <div class="magazine-pagination">page 1</div>
+    
+    <div class="pagination">
+      <span class="pagination-text">Page 1</span>
+    </div>
   </main>
 
   <footer class="footer">
     <p>&copy; 2025 Straik. Tous droits réservés.</p>
   </footer>
-  <script src="main.js"></script>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.nav');
+    
+    mobileMenuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      const icon = mobileMenuToggle.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe article cards for animation
+    document.querySelectorAll('.article-card').forEach((el, index) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+      observer.observe(el);
+    });
+    
+    // Add loading states for better UX
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </body>
 </html>

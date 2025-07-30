@@ -3,158 +3,489 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Straik Magazine – Article</title>
+  <meta name="description" content="Découvrez l'ambition derrière la création de Straik et les fondamentaux de notre approche Think Global, Act Local.">
+  <meta name="keywords" content="Straik, création, ambition, trottinette électrique, mobilité urbaine">
+  <meta name="author" content="Straik">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://straik.com/magazine-article-2.html">
+  <meta property="og:title" content="Création de Straik: Quelle ambition ?">
+  <meta property="og:description" content="Découvrez l'ambition derrière la création de Straik et les fondamentaux de notre approche Think Global, Act Local.">
+  <meta property="og:image" content="ChatGPT Image Jul 24, 2025, 06_51_10 PM.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://straik.com/magazine-article-2.html">
+  <meta property="twitter:title" content="Création de Straik: Quelle ambition ?">
+  <meta property="twitter:description" content="Découvrez l'ambition derrière la création de Straik et les fondamentaux de notre approche Think Global, Act Local.">
+  <meta property="twitter:image" content="ChatGPT Image Jul 24, 2025, 06_51_10 PM.png">
+  
+  <title>Création de Straik: Quelle ambition ? | Straik Magazine</title>
   <link rel="icon" type="image/webp" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://straik.com/magazine-article-2.html">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+  <link rel="preload" href="ChatGPT Image Jul 24, 2025, 06_51_10 PM.png" as="image">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  
   <style>
-    .simple-header {
-      background: #FE7305;
-      padding: 0.6rem 2rem;
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Enhanced Header */
+    .article-header {
+      background: linear-gradient(135deg, #FE7305 0%, #ff8533 100%);
+      padding: 1rem 0;
+      box-shadow: 0 4px 20px rgba(254, 115, 5, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+    
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      min-height: 60px;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-    .simple-header .logo {
+    
+    .logo {
       font-size: 1.8rem;
       font-weight: 700;
       color: white;
       text-decoration: none;
+      transition: transform 0.3s ease;
     }
-    .simple-nav {
+    
+    .logo:hover {
+      transform: scale(1.05);
+    }
+    
+    .nav-menu {
       display: flex;
       gap: 2rem;
       align-items: center;
+      list-style: none;
     }
-    .simple-nav a {
+    
+    .nav-menu a {
       color: white;
       text-decoration: none;
       font-weight: 500;
       padding: 0.5rem 1rem;
-      border-radius: 20px;
-      transition: background 0.3s;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .simple-nav a:hover {
-      background: rgba(255,255,255,0.2);
+    
+    .nav-menu a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.3s ease;
+      z-index: -1;
     }
-    .simple-nav a.active {
-      background: rgba(255,255,255,0.3);
+    
+    .nav-menu a:hover::before {
+      left: 0;
+    }
+    
+    .nav-menu a.active {
+      background: rgba(255, 255, 255, 0.25);
       font-weight: 600;
     }
-    .back-home {
-      background: rgba(255,255,255,0.2);
+    
+    .cta-button {
+      background: rgba(255, 255, 255, 0.2);
       color: white;
-      padding: 0.7rem 1.5rem;
-      border-radius: 25px;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
     }
-    .back-home:hover {
-      background: rgba(255,255,255,0.3);
+    
+    .cta-button:hover {
+      background: white;
+      color: #FE7305;
+      border-color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
+    
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    /* Article Content */
+    .article-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .article-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+    
+    .article-content {
+      padding: 3rem 2.5rem;
+    }
+    
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .article-date {
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    
+    .reading-time {
+      color: #64748b;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #1e293b, #475569);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .article-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      margin: 2rem 0;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .article-image:hover {
+      transform: scale(1.02);
+    }
+    
+    .article-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #374151;
+      margin-bottom: 2rem;
+    }
+    
+    .article-text ol {
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+    
+    .article-text li {
+      margin-bottom: 0.8rem;
+      padding-left: 0.5rem;
+    }
+    
+    .article-text li::marker {
+      color: #FE7305;
+      font-weight: 600;
+    }
+    
+    /* Navigation buttons */
+    .article-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid #f1f5f9;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .nav-button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #FE7305, #ff8533);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(254, 115, 5, 0.3);
+    }
+    
+    .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(254, 115, 5, 0.4);
+    }
+    
+    /* Footer */
+    .footer {
+      background: #1e293b;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+    
+    /* Responsive Design */
     @media (max-width: 768px) {
-      .simple-header {
-        padding: 1rem;
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .nav-menu {
         flex-direction: column;
         gap: 1rem;
+        width: 100%;
       }
-      .simple-nav {
-        gap: 1rem;
-        flex-wrap: wrap;
+      
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      
+      .nav-menu.hidden {
+        display: none;
+      }
+      
+      .article-content {
+        padding: 2rem 1.5rem;
+      }
+      
+      .article-title {
+        font-size: 1.8rem;
+      }
+      
+      .article-text {
+        font-size: 1rem;
+      }
+      
+      .article-navigation {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .article-content {
+        padding: 1.5rem 1rem;
+      }
+      
+      .article-title {
+        font-size: 1.5rem;
+      }
+      
+      .nav-button {
+        width: 100%;
         justify-content: center;
       }
     }
-    /* Hide header only on article page */
-    #mainHeader { display: none !important; }
-    /* Set all article text to black */
-    .article-title,
-    .article-date,
-    .article-content {
-      color: #111 !important;
+    
+    /* Loading animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .article-main {
-      max-width: 800px;
-      margin: 3rem auto 2rem auto;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-      padding: 2.5rem 2rem;
+    
+    .article-card {
+      animation: fadeInUp 0.6s ease-out;
     }
-    .article-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.7rem;
-      text-align: left;
+    
+    /* Accessibility improvements */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
-    .article-date {
-      color: #2d7cf5;
-      font-size: 1.08rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-    }
-    .article-photo {
-      width: 100%;
-      max-width: 650px;
-      height: auto;
-      margin: 1.5rem auto 2.5rem auto;
-      display: block;
-      border-radius: 16px;
-      object-fit: contain;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      padding: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .article-photo:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
-    }
-    .article-content {
-      font-size: 1.15rem;
-      color: #222;
-      margin-top: 2rem;
-      line-height: 1.7;
-      text-align: justify;
-    }
-    @media (max-width: 700px) {
-      .article-main { padding: 1.2rem 0.5rem; }
-      .article-title { font-size: 1.2rem; }
+    
+    /* Focus styles */
+    a:focus,
+    button:focus {
+      outline: 3px solid #3b82f6;
+      outline-offset: 2px;
     }
   </style>
 </head>
 <body>
-  <header class="simple-header">
-    <a href="straik.html" class="logo">Straik</a>
-    <nav class="simple-nav">
-      <a href="straik.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="magazine.html" class="active">Actualité</a>
-      <a href="aide.html">Aide & FAQ</a>
-    </nav>
-    <a href="partenariat.html" class="back-home">Partenariat</a>
+  <header class="article-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">Straik</a>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="magazine.html" class="active">Actualité</a>
+        <a href="aide.html">Aide & FAQ</a>
+      </nav>
+      <a href="partenariat.html" class="cta-button">Partenariat</a>
+    </div>
   </header>
 
-  <main class="article-main">
-    <div class="article-title">Création de Straik: Quelle ambition ?</div>
-    <div class="article-date">Juillet 2024</div>
-    <img src="ChatGPT Image Jul 24, 2025, 06_51_10 PM.png" alt="photo" class="article-photo">
-    <div class="article-content">
-      Les statuts de la société Straik ont été déposés au greffe du tribunal de commerce de Paris. Straik ne souhaite pas griller les étapes. Think Global, act local. Malgré ses ambitions internationales Straik souhaite d’abord solidifier les fondamentaux:
-      <ol style="margin:1.2rem 0 1.2rem 1.2rem;">
-        <li>avoir une excellente trottinette</li>
-        <li>avoir des partenaires fiables et à son image</li>
-        <li>avoir l’application la plus user friendly possible et la plus efficace</li>
-      </ol>
-      L’équipe de Straik n’en est pas à son coup d’essai dans le domaine de la mobilité, l’équipe annonce avoir à son actif plus de 50 000 réparations de trottinettes.
-    </div>
+  <main class="article-container">
+    <article class="article-card">
+      <div class="article-content">
+        <div class="article-meta">
+          <span class="article-date">
+            <i class="fas fa-calendar-alt"></i>
+            Juillet 2024
+          </span>
+          <span class="reading-time">
+            <i class="fas fa-clock"></i>
+            2 min de lecture
+          </span>
+        </div>
+        
+        <h1 class="article-title">Création de Straik: Quelle ambition ?</h1>
+        
+        <img src="ChatGPT Image Jul 24, 2025, 06_51_10 PM.png" 
+             alt="Équipe Straik travaillant sur l'innovation en mobilité urbaine" 
+             class="article-image"
+             loading="lazy">
+        
+        <div class="article-text">
+          <p>Les statuts de la société Straik ont été déposés au greffe du tribunal de commerce de Paris. Straik ne souhaite pas griller les étapes. <strong>Think Global, act local.</strong> Malgré ses ambitions internationales, Straik souhaite d'abord solidifier les fondamentaux :</p>
+          
+          <ol>
+            <li><strong>Avoir une excellente trottinette</strong> - Notre priorité absolue est de développer un produit de qualité supérieure</li>
+            <li><strong>Avoir des partenaires fiables et à son image</strong> - Construire un écosystème de confiance avec des acteurs partageant nos valeurs</li>
+            <li><strong>Avoir l'application la plus user friendly possible et la plus efficace</strong> - Offrir une expérience utilisateur exceptionnelle</li>
+          </ol>
+          
+          <p>L'équipe de Straik n'en est pas à son coup d'essai dans le domaine de la mobilité. L'équipe annonce avoir à son actif <strong>plus de 50 000 réparations de trottinettes</strong>, une expertise qui garantit notre compréhension approfondie des besoins du marché.</p>
+        </div>
+        
+        <div class="article-navigation">
+          <a href="magazine-article.html" class="nav-button">
+            <i class="fas fa-arrow-left"></i>
+            Article précédent
+          </a>
+          <a href="magazine-article-3.html" class="nav-button">
+            Article suivant
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </article>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 Straik. Tous droits réservés.</p>
+    <p>&copy; 2025 Straik. Tous droits réservés. | <a href="aide.html" style="color: #FE7305;">Mentions légales</a></p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('hidden');
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const navMenu = document.getElementById('navMenu');
+      const menuToggle = document.querySelector('.menu-toggle');
+      
+      if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+        navMenu.classList.add('hidden');
+      }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Add loading state for images
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('load', function() {
+        this.style.opacity = '1';
+      });
+    });
+  </script>
 </body>
 </html>

@@ -3,165 +3,600 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Straik Magazine – Article</title>
+  <meta name="description" content="Straik souffle sa première bougie : Découvrez les avancements remarquables de Straik après un an d'existence">
+  <title>Straik souffle sa première bougie - Straik Magazine</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+  <link rel="preload" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp" as="image">
+  <link rel="preload" href="ChatGPT Image Jul 23, 2025, 02_29_02 AM.png" as="image">
+  
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/webp" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="cropped-capture-decran-2024-12-01-203957-e1739728173232.webp">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  
   <style>
-    .simple-header {
-      background: #FE7305;
-      padding: 0.6rem 2rem;
+    /* CSS Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Header Styles */
+    .header {
+      background: linear-gradient(135deg, #FE7305 0%, #ff8c42 100%);
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 20px rgba(254, 115, 5, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      min-height: 60px;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-    .simple-header .logo {
-      font-size: 1.8rem;
+    
+    .logo {
+      font-size: 2rem;
       font-weight: 700;
       color: white;
       text-decoration: none;
+      transition: transform 0.3s ease;
     }
-    .simple-nav {
+    
+    .logo:hover {
+      transform: scale(1.05);
+    }
+    
+    .nav {
       display: flex;
       gap: 2rem;
       align-items: center;
     }
-    .simple-nav a {
+    
+    .nav a {
       color: white;
       text-decoration: none;
       font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      transition: background 0.3s;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .simple-nav a:hover {
-      background: rgba(255,255,255,0.2);
+    
+    .nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.3s ease;
     }
-    .simple-nav a.active {
-      background: rgba(255,255,255,0.3);
+    
+    .nav a:hover::before {
+      left: 0;
+    }
+    
+    .nav a.active {
+      background: rgba(255, 255, 255, 0.25);
       font-weight: 600;
     }
-    .back-home {
-      background: rgba(255,255,255,0.2);
+    
+    .cta-button {
+      background: rgba(255, 255, 255, 0.2);
       color: white;
-      padding: 0.7rem 1.5rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 25px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
     }
-    .back-home:hover {
-      background: rgba(255,255,255,0.3);
+    
+    .cta-button:hover {
+      background: white;
+      color: #FE7305;
+      border-color: white;
     }
+    
+    /* Mobile Menu */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    /* Back Button */
+    .back-button {
+      max-width: 900px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #FE7305;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: #ff8c42;
+      transform: translateX(-3px);
+    }
+    
+    /* Article Content */
+    .article {
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .article::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #FE7305, #ff8c42, #FE7305);
+    }
+    
+    .article-header {
+      padding: 3rem 3rem 2rem;
+    }
+    
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      color: #666;
+    }
+    
+    .article-date {
+      color: #FE7305;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .article-reading-time {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    
+    .article-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      margin-bottom: 2rem;
+    }
+    
+    .article-content {
+      padding: 0 3rem 3rem;
+    }
+    
+    .article-content p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: #444;
+      text-align: justify;
+    }
+    
+    .article-content ul {
+      margin: 1.5rem 0;
+      padding-left: 2rem;
+    }
+    
+    .article-content li {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 0.8rem;
+      color: #444;
+    }
+    
+    .article-content strong {
+      color: #FE7305;
+      font-weight: 600;
+    }
+    
+    /* Related Articles */
+    .related-articles {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    
+    .related-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #333;
+      text-align: center;
+    }
+    
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .related-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .related-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .related-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .related-content {
+      padding: 1.5rem;
+    }
+    
+    .related-date {
+      color: #FE7305;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .related-card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #333;
+    }
+    
+    /* Footer */
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .article {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    /* Mobile Responsive */
     @media (max-width: 768px) {
-      .simple-header {
+      .header {
         padding: 1rem;
+      }
+      
+      .header-content {
         flex-direction: column;
         gap: 1rem;
       }
-      .simple-nav {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
+      
+      .nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .nav.active {
+        display: flex;
+      }
+      
+      .mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+      
+      .logo {
+        font-size: 1.8rem;
+      }
+      
+      .back-button {
+        padding: 0 1rem;
+      }
+      
+      .article {
+        margin: 2rem 1rem;
+      }
+      
+      .article-header {
+        padding: 2rem 2rem 1.5rem;
+      }
+      
+      .article-title {
+        font-size: 2rem;
+      }
+      
+      .article-content {
+        padding: 0 2rem 2rem;
+      }
+      
+      .article-content p,
+      .article-content li {
+        font-size: 1.1rem;
+        text-align: left;
+      }
+      
+      .related-articles {
+        padding: 0 1rem;
+      }
+      
+      .related-grid {
+        grid-template-columns: 1fr;
       }
     }
-    /* Hide header only on article page */
-    #mainHeader { display: none !important; }
-    /* Set all article text to black */
-    .article-title,
-    .article-date,
-    .article-content {
-      color: #111 !important;
+    
+    @media (max-width: 480px) {
+      .article {
+        margin: 1rem 0.5rem;
+      }
+      
+      .article-header {
+        padding: 1.5rem 1.5rem 1rem;
+      }
+      
+      .article-title {
+        font-size: 1.8rem;
+      }
+      
+      .article-content {
+        padding: 0 1.5rem 1.5rem;
+      }
+      
+      .article-content p,
+      .article-content li {
+        font-size: 1rem;
+      }
     }
-    .article-main {
-      max-width: 800px;
-      margin: 3rem auto 2rem auto;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-      padding: 2.5rem 2rem;
+    
+    /* High DPI displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .article {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      }
     }
-    .article-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.7rem;
-      text-align: left;
-    }
-    .article-date {
-      color: #2d7cf5;
-      font-size: 1.08rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-    }
-    .article-photo {
-      width: 100%;
-      max-width: 650px;
-      height: auto;
-      margin: 1.5rem auto 2.5rem auto;
-      display: block;
-      border-radius: 16px;
-      object-fit: contain;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      padding: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .article-photo:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
-    }
-      background: #eaeaea;
-      border-radius: 12px;
-      aspect-ratio: 16/7;
-      object-fit: cover;
-      min-height: 160px;
-    }
-    .article-content {
-      font-size: 1.15rem;
-      color: #222;
-      margin-top: 2rem;
-      line-height: 1.7;
-      text-align: justify;
-    }
-    @media (max-width: 700px) {
-      .article-main { padding: 1.2rem 0.5rem; }
-      .article-title { font-size: 1.2rem; }
+    
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="simple-header">
-    <a href="straik.html" class="logo">Straik</a>
-    <nav class="simple-nav">
-      <a href="straik.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="magazine.html" class="active">Actualité</a>
-      <a href="aide.html">Aide & FAQ</a>
-    </nav>
-    <a href="partenariat.html" class="back-home">Partenariat</a>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo">Straik</a>
+      <button class="mobile-menu-toggle" aria-label="Menu mobile">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="magazine.html" class="active">Actualité</a>
+        <a href="aide.html">Aide & FAQ</a>
+      </nav>
+      <a href="partenariat.html" class="cta-button">Partenariat</a>
+    </div>
   </header>
 
-  <main class="article-main">
-    <div class="article-title">Straik souffle sa première bougie : Quels avancements ?</div>
-    <div class="article-date">Juillet 2025</div>
-    <img src="ChatGPT Image Jul 23, 2025, 02_29_02 AM.png" alt="photo" class="article-photo">
+  <div class="back-button">
+    <a href="magazine.html" class="back-link">
+      <i class="fas fa-arrow-left"></i>
+      Retour au magazine
+    </a>
+  </div>
+
+  <article class="article">
+    <header class="article-header">
+      <h1 class="article-title">Straik souffle sa première bougie : Quels avancements ?</h1>
+      
+      <div class="article-meta">
+        <span class="article-date">Juillet 2025</span>
+        <span class="article-reading-time">
+          <i class="fas fa-clock"></i>
+          3 min de lecture
+        </span>
+      </div>
+    </header>
+    
+    <img src="ChatGPT Image Jul 23, 2025, 02_29_02 AM.png" alt="Straik souffle sa première bougie" class="article-image" loading="lazy">
+    
     <div class="article-content">
-      Un an après sa création administrative Straik dévoile ses avancements :
-      <ul style="margin:1.2rem 0 1.2rem 1.2rem;">
-        <li>Près de 500 partenaires ayant manifesté un intérêt pour travailler avec Straik (soit 3 fois plus que l’objectif initial)</li>
-        <li>Une application finalisée et opérationnelle</li>
-        <li>Une flotte de plus de 200 trottinettes électriques robustes pour affronter dans la durée les routes et pavés parisiens.</li>
+      <p><strong>Un an après sa création administrative</strong>, Straik dévoile ses avancements remarquables qui dépassent toutes les attentes initiales.</p>
+      
+      <p>L'équipe de Straik est fière de présenter les résultats obtenus durant cette première année d'existence :</p>
+      
+      <ul>
+        <li><strong>Près de 500 partenaires</strong> ayant manifesté un intérêt pour travailler avec Straik (soit 3 fois plus que l'objectif initial)</li>
+        <li><strong>Une application finalisée et opérationnelle</strong> offrant une expérience utilisateur optimale</li>
+        <li><strong>Une flotte de plus de 200 trottinettes électriques</strong> robustes pour affronter dans la durée les routes et pavés parisiens</li>
       </ul>
-      Straik devrait prochainement lancer sa première flotte et devrait rapidement passer à 500 trottinettes.<br>
-      L’équipe de Straik espère pouvoir passer à 2500 trottinettes en 2026.
+      
+      <p>Ces résultats témoignent de l'engouement des commerçants parisiens pour notre approche innovante de la mobilité urbaine. Notre modèle économique solidaire, qui redistribue une partie des revenus aux partenaires locaux, séduit de plus en plus d'entrepreneurs.</p>
+      
+      <p><strong>Straik devrait prochainement lancer sa première flotte</strong> et devrait rapidement passer à 500 trottinettes. Cette expansion progressive nous permettra de tester et d'optimiser notre service avant un déploiement à plus grande échelle.</p>
+      
+      <p>L'équipe de Straik espère pouvoir passer à <strong>2500 trottinettes en 2026</strong>, consolidant ainsi sa position d'acteur majeur de la mobilité urbaine parisienne responsable.</p>
     </div>
-  </main>
+  </article>
+
+  <section class="related-articles">
+    <h2 class="related-title">Articles similaires</h2>
+    
+    <div class="related-grid">
+      <a href="magazine-article-2.html" class="related-card">
+        <img src="ChatGPT Image Jul 24, 2025, 06_51_10 PM.png" alt="Création de Straik" class="related-image" loading="lazy">
+        <div class="related-content">
+          <div class="related-date">Juillet 2024</div>
+          <h3 class="related-card-title">Création de Straik : Quelle ambition ?</h3>
+        </div>
+      </a>
+      
+      <a href="magazine-article-3.html" class="related-card">
+        <img src="ChatGPT Image Jul 24, 2025, 07_51_44 PM.png" alt="Trottinettes à Paris" class="related-image" loading="lazy">
+        <div class="related-content">
+          <div class="related-date">Septembre 2023</div>
+          <h3 class="related-card-title">Pourquoi il n'y a plus de trottinette électrique en libre-service à Paris ?</h3>
+        </div>
+      </a>
+    </div>
+  </section>
 
   <footer class="footer">
     <p>&copy; 2025 Straik. Tous droits réservés.</p>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.nav');
+    
+    mobileMenuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      const icon = mobileMenuToggle.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Reading progress indicator
+    const article = document.querySelector('.article-content');
+    const progressBar = document.createElement('div');
+    progressBar.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #FE7305, #ff8c42);
+      z-index: 9999;
+      transition: width 0.3s ease;
+    `;
+    document.body.appendChild(progressBar);
+    
+    window.addEventListener('scroll', () => {
+      const articleTop = article.offsetTop;
+      const articleHeight = article.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrollTop = window.pageYOffset;
+      
+      const progress = Math.min(
+        Math.max((scrollTop - articleTop + windowHeight) / articleHeight, 0),
+        1
+      );
+      
+      progressBar.style.width = `${progress * 100}%`;
+    });
+    
+    // Add loading states for better UX
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </body>
 </html>
