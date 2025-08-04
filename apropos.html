@@ -441,6 +441,29 @@
     }
     
     /* Hide Partenariat and Contact buttons on mobile for all pages except main page */
+    /* Mobile Partnership Button */
+    .mobile-nav-partnership {
+      background: rgba(255, 255, 255, 0.2) !important;
+      color: white !important;
+      font-weight: 600 !important;
+      border: 2px solid rgba(255, 255, 255, 0.3) !important;
+      margin-top: 0.5rem !important;
+    }
+    
+    .mobile-nav-partnership:hover {
+      background: white !important;
+      color: #FE7305 !important;
+      border-color: white !important;
+    }
+    
+    /* Show partnership button only in mobile nav */
+    @media (min-width: 769px) {
+      .mobile-nav-partnership {
+        display: none !important;
+      }
+    }
+    
+    /* Hide desktop partnership button on mobile */
     @media (max-width: 768px) {
       .cta-button {
         display: none !important;
@@ -460,6 +483,7 @@
         <a href="apropos.html" class="active">À propos</a>
         <a href="magazine.html">Actualité</a>
         <a href="aide.html">Aide & FAQ</a>
+        <a href="partenariat.html" class="mobile-nav-partnership">Partenariat</a>
       </nav>
       <a href="partenariat.html" class="cta-button">Partenariat</a>
     </div>
